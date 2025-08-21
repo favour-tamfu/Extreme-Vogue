@@ -1,0 +1,336 @@
+/* --- 1. Global Styles & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #00CDFE; /* Vivid Sky Blue */
+  --primary-hover-color: #00a8d1; /* Darker blue for hover */
+  --dark-text: #333333;
+  --light-text: #666666;
+  --border-color: #dddddd;
+  --background-light: #f9f9f9;
+  --background-white: #ffffff;
+  
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background-light);
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+/* --- 2. Reusable Components --- */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--dark-text);
+  margin-bottom: 20px;
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.5rem; }
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  color: var(--primary-color);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--background-white);
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover-color);
+}
+
+/* --- 3. Header & Navigation --- */
+
+/* Add this to style the new logo image */
+.site-header .logo img {
+  height: 90px; /* You can adjust this value */
+  width: auto;
+  display: block;
+}
+
+
+.site-header {
+  background-color: var(--background-white);
+  padding: 15px 40px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header .logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: var(--dark-text);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+/* --- 4. Footer --- */
+.site-footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 50px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-column h3 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.footer-column p, .footer-column li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--primary-color);
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  font-size: 1.8rem;
+}
+
+/* --- 5. Page-Specific Styles --- */
+
+/* --- Home Page --- */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: var(--background-white);
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+  color: var(--primary-color);
+}
+
+.service-card img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* --- About Page --- */
+.section-split {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.section-split.reverse { flex-direction: row-reverse; }
+.section-split .text-block { flex: 1 1 50%; }
+.section-split .image-block { flex: 1 1 40%; }
+.section-split img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* --- Services Page --- */
+.services-detailed-grid, .testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.service-item, .testimonial-item {
+  background: var(--background-white);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add this to style the new images on the Services page */
+.service-item img {
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.service-item:hover, .testimonial-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.service-item .icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.testimonial-item .stars {
+  color: #ffc107; /* Gold */
+  margin-bottom: 15px;
+}
+.testimonial-item .name {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* --- Contact Page --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  background: var(--background-white);
+  padding: 40px;
+  border-radius: 8px;
+}
+.contact-details li { list-style: none; margin-bottom: 15px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+.contact-grid button { width: 100%; }
+
+/* --- 6. Responsive Media Queries --- */
+@media (max-width: 768px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.8rem; }
+
+  .site-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .section-split, .section-split.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
